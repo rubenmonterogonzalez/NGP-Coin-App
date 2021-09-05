@@ -17,22 +17,18 @@
 
         <p class="subheading font-weight-regular">
           The first coin that helps you to save in your energy bills,
-          <br>Check out for more info
+          <br />Check out for more info
         </p>
-          <v-btn><a href="/contact">More Info</a></v-btn>
-
+        <v-btn><a href="/contact">More Info</a></v-btn>
       </v-col>
 
-      <v-col
-        class="mb-5"
-        cols="12"
-      >
+      <v-col class="mb-5" cols="12">
         <h2 class="headline font-weight-bold mb-3">
           What's next?
         </h2>
       </v-col>
     </v-row>
-      <v-divider></v-divider>
+    <v-divider></v-divider>
   </v-container>
 </template>
 

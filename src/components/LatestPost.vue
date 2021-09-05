@@ -6,10 +6,7 @@
     <v-row>
       <v-col cols="12" md="4" v-for="item of items" :key="item.id">
         <v-card outlined class="mx-auto">
-          <v-img 
-          class="black--text align-top"
-          height="300px" 
-          :src="item.src">
+          <v-img class="black--text align-top" height="300px" :src="item.src">
             <v-card-title>{{ item.title }}</v-card-title>
           </v-img>
 

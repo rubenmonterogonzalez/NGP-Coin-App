@@ -29,7 +29,7 @@
       <div class="hidden-sm-and-up">
         <v-menu offset-y>
           <template v-slot:activator="{ on }">
-              <v-app-bar-nav-icon v-on="on"></v-app-bar-nav-icon>
+            <v-app-bar-nav-icon v-on="on"></v-app-bar-nav-icon>
           </template>
           <v-list class="responsive-menu">
             <v-list-item>

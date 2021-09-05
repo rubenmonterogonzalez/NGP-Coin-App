@@ -5,7 +5,7 @@
     <CoinChart />
     <About />
     <LatestPost />
-    </v-main>
+  </v-main>
 </template>
 
 <script>
