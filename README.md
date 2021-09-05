@@ -11,7 +11,7 @@ To clone and run this application, you will need Git and Node.js (which comes wi
 
 ```
 # Clone this repository
-$ git clone https://github.com/rubenmonterogonzalez/
+$ git clone https://github.com/rubenmonterogonzalez/NGP-Coin-App
 
 # Go into the repository
 $ cd 
