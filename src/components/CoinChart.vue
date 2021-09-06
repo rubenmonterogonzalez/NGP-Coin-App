@@ -14,23 +14,44 @@
 <script>
 import { Draggable } from "draggable-vue-directive";
 import Chart from "chart.js";
-import coinChartData from "../coin-data.js";
+import axios from "axios";
 
 export default {
   name: "CoinChart",
-  data() {
-    return {
-      coinChartData: coinChartData,
-    };
-  },
-  mounted() {
-    const ctx = document.getElementById("coin-chart");
-    new Chart(ctx, this.coinChartData);
-  },
   directives: {
     Draggable,
   },
 };
+
+let LINEDATA = [];
+let data = [];
+let labels = [];
+
+graph();
+
+
+function graph() {
+    axios.get('https://api.coindesk.com/v1/bpi/historical/close.json?start=2019-01-01&end=2019-12-31')
+    .then((response) => {
+    LINEDATA = { ...response.data.bpi };
+    data = Object.keys(LINEDATA).map(key => LINEDATA[key]);
+    labels = Object.keys(LINEDATA);
+    new Chart(document.getElementById("coin-chart"), {
+      type: 'line',
+      data: {
+        labels: labels,
+        datasets: [
+          {
+            label: 'NGP/USD',
+            data: data,
+            borderColor: "#47b784",
+            backgroundColor: "rgba(71, 183,132,.5)",
+          }
+        ]
+      }
+    });
+  });
+}
 </script>
 
 <style>
