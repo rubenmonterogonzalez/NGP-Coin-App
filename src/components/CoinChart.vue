@@ -23,34 +23,36 @@ export default {
   },
 };
 
-let LINEDATA = [];
+let coinChart = [];
 let data = [];
 let labels = [];
 
 graph();
 
-
 function graph() {
-    axios.get('https://api.coindesk.com/v1/bpi/historical/close.json?start=2019-01-01&end=2019-12-31')
+  axios
+    .get(
+      "https://api.coindesk.com/v1/bpi/historical/close.json?start=2019-01-01&end=2019-12-31"
+    )
     .then((response) => {
-    LINEDATA = { ...response.data.bpi };
-    data = Object.keys(LINEDATA).map(key => LINEDATA[key]);
-    labels = Object.keys(LINEDATA);
-    new Chart(document.getElementById("coin-chart"), {
-      type: 'line',
-      data: {
-        labels: labels,
-        datasets: [
-          {
-            label: 'NGP/USD',
-            data: data,
-            borderColor: "#47b784",
-            backgroundColor: "rgba(71, 183,132,.5)",
-          }
-        ]
-      }
+      coinChart = { ...response.data.bpi };
+      data = Object.keys(coinChart).map((key) => coinChart[key]);
+      labels = Object.keys(coinChart);
+      new Chart(document.getElementById("coin-chart"), {
+        type: "line",
+        data: {
+          labels: labels,
+          datasets: [
+            {
+              label: "NGP/USD",
+              data: data,
+              borderColor: "#47b784",
+              backgroundColor: "rgba(71, 183,132,.5)",
+            },
+          ],
+        },
+      });
     });
-  });
 }
 </script>
 
