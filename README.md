@@ -1,7 +1,8 @@
 # NGP Coin
 
 NGP Coin is a cryptocurrency that it will help you to save on your bills.
-Live version: ngp-coin-app.netlify.app
+
+****Live version: [link]ngp-coin-app.netlify.app
 
 ## Built with
 This project is built in Vue.js Framework, using Vuetify UI Library for the layout, Chart.js to render a chart, Draggable-Vue-Directive to Drag/Drop elements and Axios to fetch the API.
